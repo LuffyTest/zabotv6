@@ -1,11 +1,11 @@
 let handler = async (m, { command, text }) => m.reply(`
-*Pertanyaan:* ${command} ${text}
-*Jawaban:* ${['Ya', 'Mungkin iya', 'Mungkin', 'Mungkin tidak', 'Tidak', 'Tidak mungkin'].getRandom()}
+*Question:* ${command} ${text}
+*Answer:* ${['Ya', 'Probably yes', 'Probably', 'Maybe not', 'No', 'No way'].getRandom()}
   `.trim(), null, m.mentionedJid ? {
   mentions: m.mentionedJid
 } : {})
 
-handler.help = ['apakah <teks>?']
+handler.help = ['apakah <text>?']
 handler.tags = ['kerang']
 handler.command = /^apakah$/i
 
