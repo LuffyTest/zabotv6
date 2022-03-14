@@ -162,11 +162,12 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['swonly'] = isEnable
       break
-    case 'simi':
+      case 'simi':
       if (m.isGroup) {
-      if (!(isAdmin || isOwner)) {
-        global.dfail('admin', m, conn)
-        throw 0
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw 0
+        }
       }
       chat.simi = isEnable
       break
