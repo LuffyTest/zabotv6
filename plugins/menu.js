@@ -60,7 +60,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Asia/Jakarta' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Asia/Colombo' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
@@ -147,9 +147,8 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
     conn.sendHydrated(m.chat, text.trim(), wm, pp, 'https://github.com/BochilGaming/games-wabot', 'Github', null, null, [
-      ['Donate', '/donasi'],
+      ['Rules', '/donasi'],
       ['Speed', '/ping'],
-      ['Owner', '/owner']
     ], m, {asLocation: 1})
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
