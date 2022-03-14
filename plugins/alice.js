@@ -12,3 +12,5 @@ module.exports = handler
   global.alice = [
     "https://telegra.ph/file/89292e86386a9e55baf69.jpg",
       ]
+
+export default handler
