@@ -24,13 +24,13 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   }
   if (!(source instanceof ArrayBuffer) || !link) throw 'Error: ' + (lastError || 'Can\'t download audio')
   if (!isY && !isLimit) conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*📌Title:* ${title}
-*🗎 Filesize:* ${audio.fileSizeH}
+*🔮 Title:* ${title}
+*🔖 File Size:* ${audio.fileSizeH}
 *${isLimit ? 'Pakai ' : ''}Link:* ${link}
 `.trim(), m)
   if (!isLimit) conn.sendFile(m.chat, source, title + '.mp3', `
-*📌Title:* ${title}
-*🗎 Filesize:* ${audio.fileSizeH}
+*🔮 Title:* ${title}
+*🔖 File Size:* ${audio.fileSizeH}
 `.trim(), m, null, {
     asDocument: 1
   })
