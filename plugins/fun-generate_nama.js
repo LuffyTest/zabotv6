@@ -31,8 +31,8 @@ function handler(m, { text }) {
         }[v.toLowerCase()] || v
     }))
 }
-handler.help = ['namaninja <teks>']
+handler.help = ['ninjaname <text>']
 handler.tags = ['fun']
-handler.command =  /^(namaninja|namae)$/i
+handler.command =  /^(ninjaname|namae)$/i
 
 export default handler
