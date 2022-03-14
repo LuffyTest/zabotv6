@@ -1,4 +1,4 @@
-let handler =  m => m.from,(`
+let handler =  m => m.from(`
 ╭─「 Donasi • Pulsa 」
 │ • Telkomsel [081227144597]
 ╰────
