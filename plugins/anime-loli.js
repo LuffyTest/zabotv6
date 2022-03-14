@@ -1,7 +1,7 @@
 let handler = async (m, { conn, text }) => {
     let yh = global.loli
     let url = yh[Math.floor(Math.random() * yh.length)]
-    conn.sendButton(m.chat, 'Random Loli', 'Lolinya Kaak', url, ['Get Again', '/loli'], m)
+    conn.sendButton(m.chat, 'Random Loli', 'Alice-Md 🥀', url, ['Get Again', '/loli'], m)
   }
   handler.command = /^(loli)$/i
   handler.tags = ['internet']
