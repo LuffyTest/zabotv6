@@ -11,12 +11,13 @@ let handler= async (m, { args, usedPrefix, command }) => {
         postsH,
     } = await instagramStalk(args[0])
     m.reply(`
-${name} *(${username})*
-https://instagram.com/${username.replace(/^@/, '')}
-*${followersH}* Followers
-*${followingH}* Following
-*${postsH}* Posts
-*Bio:* ${description}
+🔅 *Username:* ${username}
+💫 *Nickname:* ${name}
+🔹 *Followers:* *${followersH}*
+🔸 *Following:* *${followingH}* 
+✳️ *Posting:* *${postsH}*
+🎗️ *Bio:* ${description}
+📌 *Link:* https://instagram.com/${username.replace(/^@/, '')}
 `.trim())
 }
 
