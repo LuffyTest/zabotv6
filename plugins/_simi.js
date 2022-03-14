@@ -18,5 +18,4 @@ handler.before = async (m, { conn }) => {
     }
     return !0
 }
-
 export default handler
