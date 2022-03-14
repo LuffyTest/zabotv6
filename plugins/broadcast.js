@@ -4,11 +4,11 @@ let handler = async (m, { conn, text }) => {
   let chats = Object.entries(conn.chats).filter(([_, chat]) => chat.isChats).map(v => v[0])
   let cc = conn.serializeM(text ? m : m.quoted ? await m.getQuotedObj() : false || m)
   let teks = text ? text : cc.text
-  conn.reply(m.chat, `_Mengirim pesan broadcast ke ${chats.length} chat_`, m)
+  conn.reply(m.chat, `_Send a broadcast message to ${chats.length} chat_`, m)
   for (let id of chats) await conn.copyNForward(id, conn.cMod(m.chat, cc, /bc|broadcast/i.test(teks) ? teks : teks + '\n' + readMore + '「 ' + wm + ' All Chat Broadcast 」\n' + randomID(32)), true).catch(_ => _)
-  m.reply('Selesai Broadcast All Chat :)')
+  m.reply('Done Broadcast All Chat :)')
 }
-handler.help = ['broadcast', 'bc'].map(v => v + ' <teks>')
+handler.help = ['broadcast', 'bc'].map(v => v + ' <text>')
 handler.tags = ['owner']
 handler.command = /^(broadcast|bc)$/i
 
