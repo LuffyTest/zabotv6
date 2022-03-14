@@ -10,8 +10,8 @@ let handler = async (m, { conn, args }) => {
         !global.support.gm) return handler.disabled = true // Disable if doesnt support
     let inputPath = 'src/kertas/magernulis1.jpg'
     let d = new Date()
-    let tgl = d.toLocaleDateString('id-Id', { timeZone: 'Asia/Jakarta' })
-    let hari = d.toLocaleDateString('id-Id', { weekday: 'long', timeZone: 'Asia/Jakarta' })
+    let tgl = d.toLocaleDateString('id-Id', { timeZone: 'Asia/Colombo' })
+    let hari = d.toLocaleDateString('id-Id', { weekday: 'long', timeZone: 'Asia/Colombo' })
     let teks = args.join` `
     // conn.reply(m.chat, util.format({fontPath, inputPath, outputPath, tgl, hari, teks}), m)
     let bufs = []
@@ -56,11 +56,11 @@ let handler = async (m, { conn, args }) => {
     spawn(_spawnprocess, _spawnargs)
         .on('error', e => m.reply(format(e)))
         .on('close', () => {
-            conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Hati² ketahuan:v', m)
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'nulis.jpg', 'Caution caught :v', m)
         })
         .stdout.on('data', chunk => bufs.push(chunk))
 }
-handler.help = ['n'].map(v => v + 'ulis <teks>')
+handler.help = ['n'].map(v => v + 'ulis <text>')
 handler.tags = ['nulis']
 handler.command = /^nulis$/i
 
