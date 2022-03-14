@@ -1,11 +1,6 @@
-let handler =  m => m.from(`
-╭─「 Donasi • Pulsa 」
-│ • Telkomsel [081227144597]
-╰────
-
-╭─「 Donasi • Non Pulsa 」
-│ • Gopay [081227144597]
-╰────
+let handler = async (m, { conn }) => {
+  conn.sendFile(m.from, 'hello', m)
+}
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['donasi']
 handler.tags = ['info']
